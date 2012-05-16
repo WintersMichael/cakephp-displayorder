@@ -54,9 +54,9 @@ Fin!  Fun!
 
 That's cool.  You want to have other relationships, I'm ok with that.  I'll even help you.
 
-Let's say you have a Gallery of Images.  Images should only go up/down relative to other Images in the Gallery.
+Let's say you have Galleries of Images.  Images should only go up/down relative to other Images in that Gallery.
 
-From your controller, do this before any moveUp/moveDown/create on your Model:
+From your ImagesController, do this before any moveUp/moveDown/create/delete on your Model:
 ```php
 $this->Image->displayOrderConditions = array('Image.gallery_id' => $galleryId);
 ```
@@ -78,10 +78,12 @@ Caveats?
 
 -In the name of being useful across as many datasources as possible and ultimately not thoroughly caring enough, this code doesn't use transactions.  If you have a website where things will be reordered by lots of concurrent users, you probably shouldn't use this.
 
+-No ability to moveUp(5) to move an item up 5 entries
+
 -New entries always get put at the bottom.  (max(displayorder) + 1).  There's no option for this, but there probably should be.
 
 -No "insert" function.
 
-In my applications I haven't needed the "insert" or "put at top" function.  If you want to add it, please pass your code along.
+In my applications I haven't needed any of this functionality.  If you want to add it, please pass your code along.  Or, you can try to whisper sweet nothings at me and I might decide to do it for kicks.
 
 Also, I think there are probably dozens of implementations like this out there.  I just couldn't find an applicable one after about 20 minutes of searching so decided to write my own.  Maybe I suck at searching.
