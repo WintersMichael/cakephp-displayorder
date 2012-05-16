@@ -78,7 +78,7 @@ Caveats?
 
 -In the name of being useful across as many datasources as possible and ultimately not thoroughly caring enough, this code doesn't use transactions.  If you have a website where things will be reordered by lots of concurrent users, you probably shouldn't use this.
 
--No ability to moveUp(5) to move an item up 5 entries
+-No ability to moveUp(5) to move an item up 5 entries, and no moveTop(), moveBottom().
 
 -New entries always get put at the bottom.  (max(displayorder) + 1).  There's no option for this, but there probably should be.
 
