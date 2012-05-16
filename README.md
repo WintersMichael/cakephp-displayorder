@@ -27,13 +27,13 @@ $order = 'MyModel.displayorder';
 From your Controller you can now:
 
 ```php
-$this->MyModel->moveUp;
+$this->MyModel->moveUp();
 ```
 
 or
 
 ```php
-$this->MyModel->moveDown;
+$this->MyModel->moveDown();
 ```
 
 I know, right?  Sweet.
